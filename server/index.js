@@ -30,12 +30,16 @@ app.use(cookiePaser());
   .catch(err=>console.log(err))
 
 
-
-  app.get('/', (req, res) => {  res.send(`Let's got started~`) })
-  
   app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   })
+
+  app.get('/', (req, res) => {  res.send(`Let's got started~`) })
+
+  app.get('/api/hello', (req, res) => {  
+    res.send(`hi ~ `) 
+  })
+  
 
   app.post('/api/users/register',(req,res)=>{
 
